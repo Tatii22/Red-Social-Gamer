@@ -4,23 +4,31 @@ from datetime import datetime
 import questionary
 from rich.console import Console
 from rich.panel import Panel 
+import os
 
 # Consola Rich
 console = Console()
 
+ARCHIVO = os.path.join("data", "publicaciones.json")
 # Ruta del archivo JSON
-ARCHIVO = "publicaciones.json" 
+
 
 def cargar_contenido():
-    try:
-        with open(ARCHIVO, "r", encoding="utf-8") as archivo:
-            return json.load(archivo)
-    except FileNotFoundError:
+    if not os.path.exists(ARCHIVO):
         return []
 
-def guardar_contenido(data):
+    with open(ARCHIVO, "r", encoding="utf-8") as archivo:
+        try:
+            contenido = archivo.read().strip()
+            if not contenido:
+                return []
+            return json.loads(contenido)
+        except json.JSONDecodeError:
+            return []
+
+def guardar_contenido(publicaciones):
     with open(ARCHIVO, "w", encoding="utf-8") as archivo:
-        json.dump(data, archivo, indent=4, ensure_ascii=False)
+        json.dump(publicaciones, archivo, indent=4, ensure_ascii=False)
 
 
 # Crear una nueva publicación
@@ -62,5 +70,4 @@ def crear_publicacion(usuario):
     console.print(Panel(texto, title=f"🕹️ ¡{tipo.capitalize()} publicada!", border_style="green"))
 
 # Ejecutar
-if __name__ == "__main__":
-    crear_publicacion("DayanaGamer")
+crear_publicacion("DayanaGamer")
