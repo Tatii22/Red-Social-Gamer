@@ -7,6 +7,11 @@ from rich.panel import Panel
 
 # Consola Rich
 console = Console()
+
+# Ruta del archivo JSON
+ARCHIVO = "publicaciones.json" 
+
+
 # Crear una nueva publicación
 def crear_publicacion(usuario):
     console.rule("[bold cyan]🎮 Publicar Contenido Gamer")
