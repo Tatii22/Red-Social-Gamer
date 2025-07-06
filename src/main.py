@@ -1,6 +1,6 @@
 import questionary
 from estilos import mostrarLetrero, gamerStyle
-from usuarios import registrarUsuario
+from usuarios import registrarUsuario, inicioDeSesionDelUsuario
 from rich.console import Console
 
 consola = Console()
@@ -11,6 +11,7 @@ def menuPrincipal():
             "\n🎮 ¿Qué deseas hacer?",
             choices=[
                 "📝 Registrarse",
+                "🕹️  Iniciar Sesión",
                 "❌ Salir"
             ],
             style=gamerStyle
@@ -18,6 +19,8 @@ def menuPrincipal():
 
         if opc == "📝 Registrarse":
             registrarUsuario()
+        elif opc == "🕹️  Iniciar Sesión":
+            inicioDeSesionDelUsuario()
         elif opc == "❌ Salir":
             consola.print("\n👋 [bold magenta]¡Hasta luego, gamer![/bold magenta]\n")
             break

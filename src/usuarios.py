@@ -56,7 +56,7 @@ def inicioDeSesionDelUsuario():
     usuario_encontrado = next((user for user in usuarios if user["nombreUser"] == nombreUser and user["password"] == password), None)
 
     if usuario_encontrado:
-        console.print(f"\n [bold green] Inicio de sesión exitiso. Bienvenido {nombreUser} [/bold green]\n")
+        console.print(f"\n [bold green] Inicio de sesión exitoso. Bienvenido {nombreUser} [/bold green]\n")
     else:
         console.print(f"\n [bold red] Usuario o Contraseña incorrectos. [/bold red]\n")
 
