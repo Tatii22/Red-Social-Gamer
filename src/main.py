@@ -62,7 +62,9 @@ def menuPrincipal():
         if opc == "📝 Registrarse":
             registrarUsuario()
         elif opc == "🕹️  Iniciar Sesión":
-            inicioDeSesionDelUsuario()
+            usuario = inicioDeSesionDelUsuario()
+            if usuario:
+                subMenuDeIniciarSesion(usuario)
         elif opc == "❌ Salir":
             consola.print("\n👋 [bold magenta]¡Hasta luego, gamer![/bold magenta]\n")
             break

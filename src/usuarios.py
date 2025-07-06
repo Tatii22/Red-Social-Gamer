@@ -58,10 +58,10 @@ def inicioDeSesionDelUsuario():
 
     if usuario_encontrado:
         console.print(f"\n [bold green] Inicio de sesión exitoso. Bienvenido {nombreUser} [/bold green]\n")
-        subMenuDeIniciarSesion(nombreUser)
+        return nombreUser  
     else:
         console.print(f"\n [bold red] Usuario o Contraseña incorrectos. [/bold red]\n")
-
+        return None
 
 
         
