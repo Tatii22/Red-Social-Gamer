@@ -5,6 +5,9 @@ from rich.console import Console
 
 consola = Console()
 
+def subMenuDeIniciarSesion(nombreUser):
+    pass
+
 def menuPrincipal():
     while True:
         opc = questionary.select(
