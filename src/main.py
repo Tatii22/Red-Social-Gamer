@@ -6,7 +6,25 @@ from rich.console import Console
 consola = Console()
 
 def subMenuDeIniciarSesion(nombreUser):
-    pass
+    while True:
+        consola.print(f"\n[bold cyan]👾 Bienvenido al submenú, {nombreUser}![/bold cyan]\n")
+        opc = questionary.select(
+            "Elige una opción",
+            choices=[
+                "📋 Crear Publicaciónes",
+                "👀 Ver Publicaciones",
+                "🔓 Cerrar Sesion"
+            ],
+            style=gamerStyle
+        ).ask()
+
+        if opc == "📋 Crear Publicaciónes":
+            consola.print(f"\n Creando Publicación\n")
+        elif opc == "👀 Ver Publicaciones":
+            consola.print(f"\n Publcaciones de Otros Usuarios \n")
+        elif opc == "🔓 Cerrar Sesion":
+            consola.print("\n Sesión cerrada. ¡Hasta pronto! \n")
+            break
 
 def menuPrincipal():
     while True:
