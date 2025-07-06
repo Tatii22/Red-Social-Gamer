@@ -47,6 +47,7 @@ def registrarUsuario():
     console.print(f"\n✅ [bold green]Usuario '{nombreUser}' registrado con éxito.[/bold green]")
 
 def inicioDeSesionDelUsuario():
+    from main import subMenuDeIniciarSesion
     usuarios = cargarUsuarios()
     console.print("\n[bold cyan]🔒 Iniciar Sesión[/bold cyan]\n")
 
@@ -57,6 +58,7 @@ def inicioDeSesionDelUsuario():
 
     if usuario_encontrado:
         console.print(f"\n [bold green] Inicio de sesión exitoso. Bienvenido {nombreUser} [/bold green]\n")
+        subMenuDeIniciarSesion(nombreUser)
     else:
         console.print(f"\n [bold red] Usuario o Contraseña incorrectos. [/bold red]\n")
 

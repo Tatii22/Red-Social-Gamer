@@ -4,6 +4,27 @@ from usuarios import registrarUsuario, inicioDeSesionDelUsuario
 from rich.console import Console
 
 consola = Console()
+def LikeAndComments(nombreUser):
+    while True:
+        consola.print(f"\n Publcaciones\n")
+        consola.print(f"publicacion de {nombreUser}")
+        opc = questionary.select(
+            "Elige una opción",
+            choices=[
+                "Comentar 💭",
+                "like ❤️",
+                "volver"
+            ],
+            style=gamerStyle
+        ).ask()
+
+        if opc == "Comentar 💭":
+            pass
+        elif opc == "like ❤️":
+            pass
+        elif opc == "volver":
+            break
+
 
 def subMenuDeIniciarSesion(nombreUser):
     while True:
@@ -21,7 +42,7 @@ def subMenuDeIniciarSesion(nombreUser):
         if opc == "📋 Crear Publicaciónes":
             consola.print(f"\n Creando Publicación\n")
         elif opc == "👀 Ver Publicaciones":
-            consola.print(f"\n Publcaciones de Otros Usuarios \n")
+            LikeAndComments(nombreUser)
         elif opc == "🔓 Cerrar Sesion":
             consola.print("\n Sesión cerrada. ¡Hasta pronto! \n")
             break
