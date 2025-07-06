@@ -38,3 +38,17 @@ def crear_publicacion(usuario):
         console.print("[bold red]❌ No se puede publicar contenido vacío.[/bold red]")
         return
     
+    publicaciones = cargar_contenido()
+    nuevo_id = len(publicaciones) + 1
+    
+
+    nueva_publicacion = {
+        "id": nuevo_id,
+        "autor": usuario,
+        "tipo": tipo,
+        "contenido": contenido,
+        "fecha": datetime.now().strftime("%d-%m-%Y %H:%M")
+    }
+    publicaciones.append(nueva_publicacion)
+    guardar_contenido(publicaciones)
+    
