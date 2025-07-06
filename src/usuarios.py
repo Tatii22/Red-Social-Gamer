@@ -29,7 +29,7 @@ def registrarUsuario():
     usuarios = cargarUsuarios()
 
     console.print("\n[bold cyan]🎮 Registro de nuevo jugador[/bold cyan]\n")
-    nombreUser = questionary.text("👤 Nombre de usuario:", style=gamerStyle).ask().strip()
+    nombreUser = questionary.text("👤 Nombre de usuario:", style=gamerStyle).ask().strip().lower()
     if any(user["nombreUser"] == nombreUser for user in usuarios):
         console.print("❌ [bold red]El nombre de usuario ya existe.[/bold red]")
         return
