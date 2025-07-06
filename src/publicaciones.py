@@ -11,6 +11,13 @@ console = Console()
 # Ruta del archivo JSON
 ARCHIVO = "publicaciones.json" 
 
+def cargar_contenido():
+    try:
+        with open(ARCHIVO, "r", encoding="utf-8") as archivo:
+            return json.load(archivo)
+    except FileNotFoundError:
+        return []
+
 
 # Crear una nueva publicación
 def crear_publicacion(usuario):
