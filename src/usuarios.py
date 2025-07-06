@@ -45,3 +45,6 @@ def registrarUsuario():
     guardarUsuarios(usuarios)
 
     console.print(f"\n✅ [bold green]Usuario '{nombreUser}' registrado con éxito.[/bold green]")
+
+def inicioDeSesionDelUsuario():
+    pass
