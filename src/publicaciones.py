@@ -60,3 +60,7 @@ def crear_publicacion(usuario):
     )
 
     console.print(Panel(texto, title=f"🕹️ ¡{tipo.capitalize()} publicada!", border_style="green"))
+
+# Ejecutar
+if __name__ == "__main__":
+    crear_publicacion("DayanaGamer")
