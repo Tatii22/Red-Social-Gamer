@@ -52,3 +52,11 @@ def crear_publicacion(usuario):
     publicaciones.append(nueva_publicacion)
     guardar_contenido(publicaciones)
     
+    texto = (
+        f"🎲 ID: [bold magenta]{nuevo_id}[/bold magenta]\n"
+        f"[bold magenta]{tipo.upper()}[/bold magenta]: {contenido}\n\n"
+        f"🧙‍♀️ Autor: [cyan]{usuario}[/cyan]\n"
+        f"🗓️ Fecha: [green]{nueva_publicacion['fecha']}[/green]"
+    )
+
+    console.print(Panel(texto, title=f"🕹️ ¡{tipo.capitalize()} publicada!", border_style="green"))
