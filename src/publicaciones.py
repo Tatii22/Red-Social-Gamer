@@ -18,6 +18,10 @@ def cargar_contenido():
     except FileNotFoundError:
         return []
 
+def guardar_contenido(data):
+    with open(ARCHIVO, "w", encoding="utf-8") as archivo:
+        json.dump(data, archivo, indent=4, ensure_ascii=False)
+
 
 # Crear una nueva publicación
 def crear_publicacion(usuario):
