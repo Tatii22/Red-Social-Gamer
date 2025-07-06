@@ -47,4 +47,19 @@ def registrarUsuario():
     console.print(f"\n✅ [bold green]Usuario '{nombreUser}' registrado con éxito.[/bold green]")
 
 def inicioDeSesionDelUsuario():
-    pass
+    usuarios = cargarUsuarios()
+    console.print("\n[bold cyan]🔒 Iniciar Sesión[/bold cyan]\n")
+
+    nombreUser = questionary.text("👤 Nombre de usuario:", style=gamerStyle).ask().strip().lower()
+    password = questionary.password("🔒 Contraseña:", style=gamerStyle).ask().strip()
+
+    usuario_encontrado = next((user for user in usuarios if user["nombreUser"] == nombreUser and user["password"] == password), None)
+
+    if usuario_encontrado:
+        console.print(f"\n [bold green] Inicio de sesión exitiso. Bienvenido {nombreUser} [/bold green]\n")
+    else:
+        console.print(f"\n [bold red] Usuario o Contraseña incorrectos. [/bold red]\n")
+
+
+
+        
