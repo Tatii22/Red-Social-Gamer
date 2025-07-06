@@ -1,6 +1,9 @@
 import json 
+import uuid 
+from datetime import datetime
 import questionary
 from rich.console import Console
+from rich.panel import Panel 
 
 # Consola Rich
 console = Console()
@@ -18,5 +21,4 @@ def crear_publicacion(usuario):
     if not contenido.strip():
         console.print("[bold red]❌ No se puede publicar contenido vacío.[/bold red]")
         return
-    
     
