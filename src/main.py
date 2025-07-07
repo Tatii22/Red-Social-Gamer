@@ -2,6 +2,7 @@ import questionary
 from estilos import mostrarLetrero, gamerStyle
 from usuarios import registrarUsuario, inicioDeSesionDelUsuario
 from rich.console import Console
+from publicaciones import crear_publicacion 
 
 consola = Console()
 def LikeAndComments(nombreUser):
@@ -28,6 +29,7 @@ def LikeAndComments(nombreUser):
 
 def subMenuDeIniciarSesion(nombreUser):
     while True:
+        consola.clear()
         consola.print(f"\n[bold cyan]👾 Bienvenido al submenú, {nombreUser}![/bold cyan]\n")
         opc = questionary.select(
             "Elige una opción",
@@ -40,7 +42,8 @@ def subMenuDeIniciarSesion(nombreUser):
         ).ask()
 
         if opc == "📋 Crear Publicaciónes":
-            consola.print(f"\n Creando Publicación\n")
+            crear_publicacion(nombreUser)
+
         elif opc == "👀 Ver Publicaciones":
             LikeAndComments(nombreUser)
         elif opc == "🔓 Cerrar Sesion":

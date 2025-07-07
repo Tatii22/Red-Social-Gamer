@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "autor": "tatiana",
+        "tipo": "logro",
+        "contenido": "Obtuve un arma legendaria en COD ",
+        "fecha": "06-07-2025 17:58"
+    },
+    {
+        "id": 2,
+        "autor": "dayana",
+        "tipo": "noticia",
+        "contenido": "Habra una nueva actualizacion en warzone, esten pendientes",
+        "fecha": "06-07-2025 18:06"
+    },
+    {
+        "id": 3,
+        "autor": "dayana",
+        "tipo": "logro",
+        "contenido": "Obtuve armas legendarias en COD",
+        "fecha": "06-07-2025 18:13"
+    },
+    {
+        "id": 4,
+        "autor": "santiago",
+        "tipo": "noticia",
+        "contenido": "Actualizaran WARZONE, esten pendientes",
+        "fecha": "06-07-2025 18:17"
+    },
+    {
+        "id": 5,
+        "autor": "santiago",
+        "tipo": "recomendación",
+        "contenido": "Utilizar armas legendarias en cada combat",
+        "fecha": "06-07-2025 18:18"
+    },
+    {
+        "id": 6,
+        "autor": "dayana",
+        "tipo": "logro",
+        "contenido": "Gane una partida solo con un arma legendariaaaa",
+        "fecha": "06-07-2025 19:00"
+    },
+    {
+        "id": 7,
+        "autor": "dayana",
+        "tipo": "logro",
+        "contenido": "He obtenido un nuevo logro en COD y acabo de aniquilar 34 jugadores en menos de 15 minutos",
+        "fecha": "06-07-2025 19:05"
+    },
+    {
+        "id": 8,
+        "autor": "dayana",
+        "tipo": "noticia",
+        "contenido": "Recuerden guardar los momentos mas epicos en cada partida!! Ganaras un arma legandaria si los tienes.",
+        "fecha": "06-07-2025 19:09"
+    },
+    {
+        "id": 9,
+        "autor": "zully",
+        "tipo": "logro",
+        "contenido": "Gane mas diamantes en WARZONEEE",
+        "fecha": "06-07-2025 19:10"
+    },
+    {
+        "id": 10,
+        "autor": "zully",
+        "tipo": "noticia",
+        "contenido": "Mas diamantes en Minecraft",
+        "fecha": "06-07-2025 19:11"
+    },
+    {
+        "id": 11,
+        "autor": "zully",
+        "tipo": "logro",
+        "contenido": "Ganamos 20 Armas Legendarias por solo iniciar sesion a COD por 30 dias",
+        "fecha": "06-07-2025 19:13"
+    },
+    {
+        "id": 12,
+        "autor": "zully",
+        "tipo": "logro",
+        "contenido": "Mi grupo derroto el moustro (jugador pro",
+        "fecha": "06-07-2025 19:22"
+    },
+    {
+        "id": 13,
+        "autor": "zully",
+        "tipo": "noticia",
+        "contenido": "Esten atentos a las publicaciones de la pag principal",
+        "fecha": "06-07-2025 19:23"
+    },
+    {
+        "id": 14,
+        "autor": "zully",
+        "tipo": "noticia",
+        "contenido": "Lanzaron un nuevo modo de juego en COD",
+        "fecha": "06-07-2025 19:28"
+    }
+]
