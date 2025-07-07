@@ -68,6 +68,3 @@ def crear_publicacion(usuario):
     )
 
     console.print(Panel(texto, title=f"🕹️ ¡{tipo.capitalize()} publicada!", border_style="green"))
-
-# Ejecutar
-crear_publicacion("DayanaGamer")
