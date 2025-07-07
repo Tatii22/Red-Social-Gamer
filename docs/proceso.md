@@ -40,3 +40,17 @@ A continuación se mostraran las tareas asignadas a cada integrante del equipo d
 - 🟠Registro de Usuario = Tatiana, Desarrollo del registro de usuario, permitiendo la creacion de nuevas cuentas.
 - 🟠Validaciones = Tatiana, Verificacion de los enlaces y funciones principales estubieran elaboradas correctamente.
 - 🟠Publicacion Gamer = Dayana, Creacion de la seccion publicacion gamer, para que los usuarios puedan compartir contenido relacionado con videojuegos.
+
+## Aporte del Scrum Master 
+- El Scrum Master principalmente fue el encargado de la realizacion de las reuniones de los integrantes
+- Pudo dar sus opiniones del avance del proyecto y al apoyo de solucion de dudas
+- se verifico cada prueba que saliera correctamente (Tati)
+- Creador de las diapositivas del proyecto final para la exposicion y explicacion a detalle
+
+## Realizacion de Daily Scrum
+- El primer dia (Viernes 04) se realizo una reunion donde de acordo mas a detalle
+los dias en los cuales se realizaran las reuniones y hicimos una encuesta
+donde se escogeria el tema a realizar de nuestro proyecto.
+- El segundo dia (Sabado 05 a las 9:11pm) nos reunimos en discord, se realizaron los sprint,
+verificamos que funcionara correctamente y se acordo
+que nuevos sprints ibamos a trabajar. Tambien se realizo el Sprint Backlog.
