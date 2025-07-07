@@ -29,6 +29,7 @@ def LikeAndComments(nombreUser):
 
 def subMenuDeIniciarSesion(nombreUser):
     while True:
+        consola.clear()
         consola.print(f"\n[bold cyan]👾 Bienvenido al submenú, {nombreUser}![/bold cyan]\n")
         opc = questionary.select(
             "Elige una opción",

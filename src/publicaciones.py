@@ -1,17 +1,16 @@
 import json 
-import uuid 
+import os
 from datetime import datetime
 import questionary
 from rich.console import Console
 from rich.panel import Panel 
-import os
+from estilos import gamerStyle  # Estilo personalizado
 
 # Consola Rich
 console = Console()
 
-ARCHIVO = os.path.join("data", "publicaciones.json")
 # Ruta del archivo JSON
-
+ARCHIVO = os.path.join("data", "publicaciones.json")
 
 def cargar_contenido():
     if not os.path.exists(ARCHIVO):
@@ -30,26 +29,29 @@ def guardar_contenido(publicaciones):
     with open(ARCHIVO, "w", encoding="utf-8") as archivo:
         json.dump(publicaciones, archivo, indent=4, ensure_ascii=False)
 
-
 # Crear una nueva publicación
 def crear_publicacion(usuario):
     console.rule("[bold cyan]🎮 Publicar Contenido Gamer")
 
     tipo = questionary.select(
         "🖥️ ¿Qué tipo de contenido vas a publicar?",
-        choices=["logro", "noticia", "captura", "recomendación"]
+        choices=["logro", "noticia", "captura", "recomendación"],
+        style=gamerStyle
     ).ask()
 
-    contenido = questionary.text("📸 Escribe tu publicación:").ask()
-
-    if not contenido.strip():
-        console.print("[bold red]❌ No se puede publicar contenido vacío.[/bold red]")
-        return
+    while True: 
+        contenido = questionary.text("🖋️ Escribe tu publicación:", style=gamerStyle).ask()
+    
+        if  contenido and contenido.strip():
+            break 
+        console.clear()
+        console.rule("[bold red]📭 Publicacion vacia", style="red")
+        console.print("[bold red]🫡 Intenta escribir tu publicacion nuevamente.[/bold red]")
     
     publicaciones = cargar_contenido()
     nuevo_id = len(publicaciones) + 1
+    print("\n ")
     
-
     nueva_publicacion = {
         "id": nuevo_id,
         "autor": usuario,
@@ -57,6 +59,7 @@ def crear_publicacion(usuario):
         "contenido": contenido,
         "fecha": datetime.now().strftime("%d-%m-%Y %H:%M")
     }
+
     publicaciones.append(nueva_publicacion)
     guardar_contenido(publicaciones)
     
@@ -67,4 +70,5 @@ def crear_publicacion(usuario):
         f"🗓️ Fecha: [green]{nueva_publicacion['fecha']}[/green]"
     )
 
-    console.print(Panel(texto, title=f"🕹️ ¡{tipo.capitalize()} publicada!", border_style="green"))
+    console.print(Panel(texto, title=f"🕹️ ¡{tipo.capitalize()} publicado/a!", border_style="green"))
+    input("\nPresiona Enter para volver al submenú...")
