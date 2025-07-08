@@ -4,6 +4,8 @@ from usuarios import registrarUsuario, inicioDeSesionDelUsuario
 from rich.console import Console
 from publicaciones import crear_publicacion 
 
+
+
 consola = Console()
 def LikeAndComments(nombreUser):
     while True:
