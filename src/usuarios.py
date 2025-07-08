@@ -82,5 +82,5 @@ def ver_jugadores_registrados():
     for i, user in enumerate(usuarios, 1):
         table.add_row(str(i), user["nombreUser"])
 
-        console.print(Panel.fit(table, title="📋 Lista de Jugadores", border_style="bright_blue"))
+    console.print(Panel.fit(table, title="📋 Lista de Jugadores", border_style="bright_blue"))
     input("\nPresiona Enter para volver...")
