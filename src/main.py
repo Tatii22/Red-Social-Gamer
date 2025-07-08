@@ -2,7 +2,7 @@ import questionary
 from estilos import mostrarLetrero, gamerStyle
 from usuarios import registrarUsuario, inicioDeSesionDelUsuario
 from rich.console import Console
-from publicaciones import crear_publicacion 
+from publicaciones import crear_publicacion, mirar_publicaciones
 from usuarios import ver_jugadores_registrados
 
 
@@ -14,6 +14,7 @@ def LikeAndComments(nombreUser):
         opc = questionary.select(
             "Elige una opción",
             choices=[
+                "ver publcaciones 👀",
                 "Comentar 💭",
                 "like ❤️",
                 "volver"
@@ -21,7 +22,9 @@ def LikeAndComments(nombreUser):
             style=gamerStyle
         ).ask()
 
-        if opc == "Comentar 💭":
+        if opc == "ver publcaciones 👀":
+            mirar_publicaciones()
+        elif opc == "Comentar 💭":
             pass
         elif opc == "like ❤️":
             pass
