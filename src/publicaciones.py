@@ -29,6 +29,9 @@ def guardar_contenido(publicaciones):
     with open(ARCHIVO, "w", encoding="utf-8") as archivo:
         json.dump(publicaciones, archivo, indent=4, ensure_ascii=False)
 
+def mirar_publicaciones():
+    pass
+
 # Crear una nueva publicación
 def crear_publicacion(usuario):
     console.rule("[bold cyan]🎮 Publicar Contenido Gamer")
