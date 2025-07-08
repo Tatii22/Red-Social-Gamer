@@ -4,6 +4,9 @@ import questionary
 from rich.console import Console
 from rich.prompt import Prompt
 from estilos import gamerStyle
+from rich.table import Table
+from rich.panel import Panel
+
 
 console = Console()
 RUTA_USUARIOS = os.path.join("data", "usuarios.json")
@@ -62,6 +65,22 @@ def inicioDeSesionDelUsuario():
     else:
         console.print(f"\n [bold red] Usuario o Contraseña incorrectos. [/bold red]\n")
         return None
+    
 
+def ver_jugadores_registrados():
+    usuarios = cargarUsuarios()
 
-        
+    if not usuarios:
+        console.print("[bold red]🤖 No hay jugadores registrados aún.[/bold red]")
+        input("\nPresiona Enter para volver...")
+        return
+    
+    table = Table(title="🎮 Jugadores Registrados", border_style="cyan")
+    table.add_column("No.", style="bold green")
+    table.add_column("Nombre de Usuario", style="bold magenta")
+
+    for i, user in enumerate(usuarios, 1):
+        table.add_row(str(i), user["nombreUser"])
+
+    console.print(Panel.fit(table, title="📋 Lista de Jugadores", border_style="bright_blue"))
+    input("\nPresiona Enter para volver...")
