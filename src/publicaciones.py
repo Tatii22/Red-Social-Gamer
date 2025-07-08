@@ -75,7 +75,7 @@ def crear_publicacion(usuario):
     console.print(Panel(texto, title=f"🕹️ ¡{tipo.capitalize()} publicado/a!", border_style="green"))
     input("\nPresiona Enter para volver al submenú...")
 
-    def ver_publicaciones(usuario_actual):
+def ver_publicaciones(usuario_actual):
     publicaciones = cargar_contenido()
 
     if not publicaciones:
