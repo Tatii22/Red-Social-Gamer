@@ -67,3 +67,7 @@ Luego se realizaron pruebas funcionales, que confirmaron que todo se ejecutaba c
 
 - Que cosas salieron bien: La buena comunicacion y la asignacion adecuada de las tareas 
 - Que podemos mejorar si se diera la oportunidad: El conocimiento sobre las funciones de GitHub a la hora de trabajar en equipo
+
+# Reflexion Scrum Master
+
+- Como Scrum Master, me siento conforme con el trabajo realizado por el equipo. Logramos mantener una buena comunicacion, organizar bien nuestras tareas y avanzar de forma constante. Las reuniones nos ayudaron a tomar decisiones en conjunto y a resolver dudas. El equipo mostro compromiso y responsabilidad durante todo el sprint :b
