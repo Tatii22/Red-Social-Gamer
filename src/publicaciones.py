@@ -113,7 +113,9 @@ def crear_publicacion(usuario):
         "autor": usuario,
         "tipo": tipo,
         "contenido": contenido,
-        "fecha": datetime.now().strftime("%d-%m-%Y %H:%M")
+        "fecha": datetime.now().strftime("%d-%m-%Y %H:%M"),
+        "like": [],
+        "comentarios": []
     }
 
     publicaciones.append(nueva_publicacion)
