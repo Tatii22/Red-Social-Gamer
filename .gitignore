@@ -1,1 +1,19 @@
 ./__pycache__/
+# Ignorar todos los __pycache__ en cualquier parte del proyecto
+**/__pycache__/
+
+# Ignorar archivos compilados de Python
+*.py[cod]
+*.pyo
+
+# Ignorar archivos temporales de entorno
+*.env
+*.venv
+env/
+venv/
+ENV/
+VENV/
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
