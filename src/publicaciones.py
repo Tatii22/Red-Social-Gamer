@@ -130,3 +130,37 @@ def crear_publicacion(usuario):
 
     console.print(Panel(texto, title=f"🕹️ ¡{tipo.capitalize()} publicado/a!", border_style="green"))
     input("\nPresiona Enter para volver al submenú...")
+
+    def ver_publicaciones(usuario_actual):
+    publicaciones = cargar_contenido()
+
+    if not publicaciones:
+        console.print(Panel("😔 No hay publicaciones aún.", title="AFKNet", style="bold red"))
+        return
+
+    opciones = []
+    for idx, pub in enumerate(publicaciones, start=1):
+        # Validar que existan los campos necesarios
+        likes = pub.get("likes", [])
+        comentarios = pub.get("comentarios", [])
+        opciones.append(
+            f"{idx}. [{pub['autor']}] {pub['contenido']}\n   👍 Likes: {len(likes)}   💬 Comentarios: {len(comentarios)}"
+        )
+    opciones.append("❌ Volver al menú principal")
+
+    seleccion = questionary.select(
+        "📰 Publicaciones Disponibles:",
+        choices=opciones,
+        style=gamerStyle
+    ).ask()
+
+    if seleccion == "❌ Volver al menú principal":
+        return
+
+    indice = int(seleccion.split(".")[0]) - 1
+    mostrar_detalle_publicacion(publicaciones, indice, usuario_actual)
+
+
+
+def mostrar_detalle_publicacion(publicaciones, indice, usuario_actual):
+    pass
