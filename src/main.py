@@ -2,35 +2,11 @@ import questionary
 from estilos import mostrarLetrero, gamerStyle
 from usuarios import registrarUsuario, inicioDeSesionDelUsuario
 from rich.console import Console
-from publicaciones import crear_publicacion, mirar_publicaciones
+from publicaciones import crear_publicacion, ver_publicaciones
 from usuarios import ver_jugadores_registrados
 
 
 consola = Console()
-def LikeAndComments(nombreUser):
-    while True:
-        consola.print(f"\n Publcaciones\n")
-        consola.print(f"publicacion de {nombreUser}")
-        opc = questionary.select(
-            "Elige una opción",
-            choices=[
-                "ver publcaciones 👀",
-                "Comentar 💭",
-                "like ❤️",
-                "volver"
-            ],
-            style=gamerStyle
-        ).ask()
-
-        if opc == "ver publcaciones 👀":
-            mirar_publicaciones()
-        elif opc == "Comentar 💭":
-            pass
-        elif opc == "like ❤️":
-            pass
-        elif opc == "volver":
-            break
-
 
 def subMenuDeIniciarSesion(nombreUser):
     while True:
@@ -52,8 +28,8 @@ def subMenuDeIniciarSesion(nombreUser):
             crear_publicacion(nombreUser)
 
         elif opc == "👀 Ver Publicaciones":
-            LikeAndComments(nombreUser)
-
+            ver_publicaciones(nombreUser)
+            
         elif opc == "👤 Ver Jugadores Registrados":
             ver_jugadores_registrados()
             
