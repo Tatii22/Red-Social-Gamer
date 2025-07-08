@@ -29,6 +29,62 @@ def guardar_contenido(publicaciones):
     with open(ARCHIVO, "w", encoding="utf-8") as archivo:
         json.dump(publicaciones, archivo, indent=4, ensure_ascii=False)
 
+def mirar_publicaciones():
+    console.rule("[bold cyan]🌟 Publicaciones de la Comunidad Gamer")
+
+    with open(ARCHIVO, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not data:
+        console.print("[bold red]🚫 No hay publicaciones todavía.[/bold red]")
+        input("\nPresiona Enter para volver al submenú...")
+        return
+
+    total = len(data)
+    page_size = 10
+    page = 0
+
+    while True:
+        console.clear()
+        console.rule("[bold cyan]🌟 Publicaciones de la Comunidad Gamer")
+
+        start = page * page_size
+        end = start + page_size
+        publicaciones_pagina = data[start:end]
+
+        for pub in publicaciones_pagina:
+            texto = (
+                f"🎲 ID: [bold magenta]{pub['id']}[/bold magenta]\n"
+                f"[bold magenta]{pub['tipo'].upper()}[/bold magenta]: {pub['contenido']}\n\n"
+                f"🧙‍♀️ Autor: [cyan]{pub['autor']}[/cyan]\n"
+                f"🗓️ Fecha: [green]{pub['fecha']}[/green]"
+            )
+            console.print(Panel(texto, border_style="green"))
+
+        console.print(f"[bold yellow]Página {page + 1} de {(total - 1) // page_size + 1}[/bold yellow]\n")
+
+        opciones = []
+
+        if start + page_size < total:
+            opciones.append("➡️ Siguiente")
+        if page > 0:
+            opciones.append("⬅️ Anterior")
+        opciones.append("🏠 Volver al menú")
+
+        opcion = questionary.select(
+            "¿Qué quieres hacer?",
+            choices=opciones,
+            style=gamerStyle
+        ).ask()
+
+        if opcion == "➡️ Siguiente":
+            page += 1
+        elif opcion == "⬅️ Anterior":
+            page -= 1
+        else:  # Volver al menú
+            break
+
+
 # Crear una nueva publicación
 def crear_publicacion(usuario):
     console.rule("[bold cyan]🎮 Publicar Contenido Gamer")
