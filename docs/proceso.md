@@ -54,3 +54,16 @@ donde se escogeria el tema a realizar de nuestro proyecto.
 - El segundo dia (Sabado 05 a las 9:11pm) nos reunimos en discord, se realizaron los sprint,
 verificamos que funcionara correctamente y se acordo
 que nuevos sprints ibamos a trabajar. Tambien se realizo el Sprint Backlog.
+
+# Logros de Proyecto 
+Nosotros como equipo tenemos 2 logros principalmente:
+
+1. Avances realizados por parte de los programadores quedaran funcionables
+para la continuacion con las siguiente funciones asignadas
+2. Se verifico que el codigo de cada integrante fuera funcional y compatible con el resto del proyecto.
+Luego se realizaron pruebas funcionales, que confirmaron que todo se ejecutaba correctamente y permitio avanzar al siguiente sprint
+
+## Retrospectiva
+
+- Que cosas salieron bien: La buena comunicacion y la asignacion adecuada de las tareas 
+- Que podemos mejorar si se diera la oportunidad: El conocimiento sobre las funciones de GitHub a la hora de trabajar en equipo
