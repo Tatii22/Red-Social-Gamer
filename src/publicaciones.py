@@ -35,7 +35,7 @@ def crear_publicacion(usuario):
 
     tipo = questionary.select(
         "🖥️ ¿Qué tipo de contenido vas a publicar?",
-        choices=["logro", "noticia", "captura", "recomendación"],
+        choices=["Logro", "Noticia", "Captura", "Recomendación"],
         style=gamerStyle
     ).ask()
 
@@ -105,23 +105,29 @@ def ver_publicaciones(usuario_actual):
     mostrar_detalle_publicacion(publicaciones, indice, usuario_actual)
 
 
-
 def mostrar_detalle_publicacion(publicaciones, indice, usuario_actual):
     pub = publicaciones[indice]
     pub.setdefault("likes", [])
     pub.setdefault("comentarios", [])
 
+    # Construir el texto con la publicación y los comentarios existentes
     texto = (
         f"[bold cyan]{pub['autor']}[/bold cyan]: {pub['contenido']}\n\n"
         f"👍 Likes: {len(pub['likes'])}   💬 Comentarios: {len(pub['comentarios'])}\n\n"
-        "[dim]No hay comentarios aún.[/dim]\n"
     )
+
+    if pub["comentarios"]:
+        texto += "[bold underline]Comentarios:[/bold underline]\n"
+        for c in pub["comentarios"]:
+            texto += f"- [green]{c['usuario']}[/green]: {c['comentario']}\n"
+    else:
+        texto += "[dim]No hay comentarios aún.[/dim]\n"
 
     console.print(Panel.fit(texto, title="📝 Publicación"))
 
     accion = questionary.select(
         "¿Qué deseas hacer?",
-        choices=["👉 Dar like", "⬅️ Volver"],
+        choices=["👉 Dar like", "💬 Comentar", "⬅️ Volver"],
         style=gamerStyle
     ).ask()
 
@@ -132,6 +138,14 @@ def mostrar_detalle_publicacion(publicaciones, indice, usuario_actual):
             pub["likes"].append(usuario_actual)
             guardar_contenido(publicaciones)
             console.print("[green]✅ ¡Le diste like a esta publicación![/green]")
+        mostrar_detalle_publicacion(publicaciones, indice, usuario_actual)
+
+    elif accion == "💬 Comentar":
+        comentario = questionary.text("📝 Escribe tu comentario:", style=gamerStyle).ask()
+        if comentario.strip():
+            pub["comentarios"].append({"usuario": usuario_actual, "comentario": comentario})
+            guardar_contenido(publicaciones)
+            console.print("[green]✅ Comentario añadido correctamente.[/green]")
         mostrar_detalle_publicacion(publicaciones, indice, usuario_actual)
 
     else:
