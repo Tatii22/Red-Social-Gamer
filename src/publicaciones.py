@@ -4,7 +4,7 @@ from datetime import datetime
 import questionary
 from rich.console import Console
 from rich.panel import Panel 
-from estilos import gamerStyle  # Estilo personalizado
+from estilos import gamerStyle  
 
 # Consola Rich
 console = Console()
@@ -13,17 +13,14 @@ console = Console()
 ARCHIVO = os.path.join("data", "publicaciones.json")
 
 def cargar_contenido():
-    if not os.path.exists(ARCHIVO):
-        return []
-
-    with open(ARCHIVO, "r", encoding="utf-8") as archivo:
-        try:
-            contenido = archivo.read().strip()
-            if not contenido:
+    try:
+        with open(ARCHIVO, "r", encoding="utf-8") as archivo:
+            datos = json.load(archivo)
+            if not isinstance(datos, list):  
                 return []
-            return json.loads(contenido)
-        except json.JSONDecodeError:
-            return []
+            return datos
+    except (FileNotFoundError, json.decoder.JSONDecodeError):
+        return []
 
 def guardar_contenido(publicaciones):
     with open(ARCHIVO, "w", encoding="utf-8") as archivo:
