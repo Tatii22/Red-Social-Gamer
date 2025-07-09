@@ -12,7 +12,7 @@ console = Console()
 # Ruta del archivo JSON
 ARCHIVO = os.path.join("data", "publicaciones.json")
 
-def cargar_publicaciones():
+def cargar_contenido():
     try:
         with open(ARCHIVO, "r", encoding="utf-8") as archivo:
             datos = json.load(archivo)
