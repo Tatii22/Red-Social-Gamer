@@ -32,16 +32,30 @@ def registrarUsuario():
     usuarios = cargarUsuarios()
 
     console.print("\n[bold cyan]🎮 Registro de nuevo jugador[/bold cyan]\n")
-    nombreUser = questionary.text("👤 Nombre de usuario:", style=gamerStyle).ask().strip().lower()
-    if any(user["nombreUser"] == nombreUser for user in usuarios):
-        console.print("❌ [bold red]El nombre de usuario ya existe.[/bold red]")
-        return
 
-    password = questionary.password("🔒 Contraseña:", style=gamerStyle).ask().strip()
+    while True:
+        nombreUser = questionary.text("👤 Nombre de usuario:", style=gamerStyle).ask()
+        if not nombreUser or not nombreUser.strip():
+            console.print("❌ [bold red]El nombre de usuario no puede estar vacío.[/bold red]")
+            continue
+        
+        nombreUser = nombreUser.strip().lower()
+
+        if any(user["nombreUser"] == nombreUser for user in usuarios):
+            console.print("❌ [bold red]El nombre de usuario ya existe.[/bold red]")
+            return
+        break
+
+    while True:
+        password = questionary.password("🔒 Contraseña:", style=gamerStyle).ask()
+        if not password or not password.strip():
+            console.print("❌ [bold red]La contraseña no puede estar vacía.[/bold red]")
+            continue
+        break
 
     nuevo_usuario = {
         "nombreUser": nombreUser,
-        "password": password
+        "password": password.strip()
     }
 
     usuarios.append(nuevo_usuario)
@@ -49,8 +63,8 @@ def registrarUsuario():
 
     console.print(f"\n✅ [bold green]Usuario '{nombreUser}' registrado con éxito.[/bold green]")
 
+
 def inicioDeSesionDelUsuario():
-    from main import subMenuDeIniciarSesion
     usuarios = cargarUsuarios()
     console.print("\n[bold cyan]🔒 Iniciar Sesión[/bold cyan]\n")
 

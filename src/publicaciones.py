@@ -4,7 +4,7 @@ from datetime import datetime
 import questionary
 from rich.console import Console
 from rich.panel import Panel 
-from estilos import gamerStyle  # Estilo personalizado
+from estilos import gamerStyle  
 
 # Consola Rich
 console = Console()
