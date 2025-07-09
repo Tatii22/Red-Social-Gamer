@@ -18,5 +18,9 @@
     {
         "nombreUser": "sara",
         "password": "sara22"
+    },
+    {
+        "nombreUser": "juan",
+        "password": "juan12"
     }
 ]
