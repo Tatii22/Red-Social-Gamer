@@ -12,18 +12,15 @@ console = Console()
 # Ruta del archivo JSON
 ARCHIVO = os.path.join("data", "publicaciones.json")
 
-def cargar_contenido():
-    if not os.path.exists(ARCHIVO):
-        return []
-
-    with open(ARCHIVO, "r", encoding="utf-8") as archivo:
-        try:
-            contenido = archivo.read().strip()
-            if not contenido:
+def cargar_publicaciones():
+    try:
+        with open(ARCHIVO, "r", encoding="utf-8") as archivo:
+            datos = json.load(archivo)
+            if not isinstance(datos, list):  
                 return []
-            return json.loads(contenido)
-        except json.JSONDecodeError:
-            return []
+            return datos
+    except (FileNotFoundError, json.decoder.JSONDecodeError):
+        return []
 
 def guardar_contenido(publicaciones):
     with open(ARCHIVO, "w", encoding="utf-8") as archivo:
