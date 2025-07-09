@@ -35,7 +35,7 @@ def crear_publicacion(usuario):
 
     tipo = questionary.select(
         "🖥️ ¿Qué tipo de contenido vas a publicar?",
-        choices=["logro", "noticia", "captura", "recomendación"],
+        choices=["Logro", "Noticia", "Captura", "Recomendación"],
         style=gamerStyle
     ).ask()
 
