@@ -60,7 +60,7 @@ cd Red-Social-Gamer
 pip install rich questionary
 ```
 
-5. Ejecuta el programa principal:
+4. Ejecuta el programa principal:
 
 ```bash
 python main.py
@@ -125,7 +125,7 @@ RED-SOCIAL-GAMER/
 - Tatiana Villamizar – https://github.com/Tatii22 
 - Diego Díaz – https://github.com/Twidied
 - Dayana Barbosa – https://github.com/Dayana196
-- Criatian Mayorga – https://github.com/yorga1317
+- Cristian Mayorga – https://github.com/yorga1317
 
 
 ---
