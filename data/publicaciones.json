@@ -46,7 +46,11 @@
         "autor": "dayana",
         "tipo": "logro",
         "contenido": "He obtenido un nuevo logro en COD y acabo de aniquilar 34 jugadores en menos de 15 minutos",
-        "fecha": "06-07-2025 19:05"
+        "fecha": "06-07-2025 19:05",
+        "likes": [
+            "juan"
+        ],
+        "comentarios": []
     },
     {
         "id": 8,

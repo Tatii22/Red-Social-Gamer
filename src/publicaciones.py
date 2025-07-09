@@ -107,4 +107,32 @@ def ver_publicaciones(usuario_actual):
 
 
 def mostrar_detalle_publicacion(publicaciones, indice, usuario_actual):
-    pass
+    pub = publicaciones[indice]
+    pub.setdefault("likes", [])
+    pub.setdefault("comentarios", [])
+
+    texto = (
+        f"[bold cyan]{pub['autor']}[/bold cyan]: {pub['contenido']}\n\n"
+        f"👍 Likes: {len(pub['likes'])}   💬 Comentarios: {len(pub['comentarios'])}\n\n"
+        "[dim]No hay comentarios aún.[/dim]\n"
+    )
+
+    console.print(Panel.fit(texto, title="📝 Publicación"))
+
+    accion = questionary.select(
+        "¿Qué deseas hacer?",
+        choices=["👉 Dar like", "⬅️ Volver"],
+        style=gamerStyle
+    ).ask()
+
+    if accion == "👉 Dar like":
+        if usuario_actual.lower() in [u.lower() for u in pub["likes"]]:
+            console.print("[yellow]⚠️ Ya le diste like a esta publicación.[/yellow]")
+        else:
+            pub["likes"].append(usuario_actual)
+            guardar_contenido(publicaciones)
+            console.print("[green]✅ ¡Le diste like a esta publicación![/green]")
+        mostrar_detalle_publicacion(publicaciones, indice, usuario_actual)
+
+    else:
+        ver_publicaciones(usuario_actual)
